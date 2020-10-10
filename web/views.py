@@ -1,3 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
+def Expense(request):
+    return render(request)
+# Create your views here
