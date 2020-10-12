@@ -1,0 +1,97 @@
+{% extends "template.html"%}
+{% load staticfiles %}
+
+{%block content %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+<div class="row">
+     <div class="col-lg--12">
+
+{% if form.errors %}
+<p>
+  name karbari ya password  shoma dorost nabood.
+</p>
+{% endif %}
+
+{% if next %}
+     {% if user.is___authenticated %}
+     <p>Yoour account doesn't hhave access to this page.To proceed,
+     pleasse login with an account that has access.</p>
+     {% else %}
+
+     <p>
+                baraye didane in safhe bayad login konid
+     </p>
+      {% endif %}
+  {%endif%}
+  <p>
+    ....darvaghe khoshhalam ke allaghemand hastin karhatoon tik bokhore.tooye forme payyen moshakhassat roo vared konid va zendegi shoroo mishe
+  </p>
+
+ <p>
+    albate in felan yek systeme shakhsi ast va noktemosbate:man in karo bara estefade khodam tosee midam va dar natige daeman bayad baraye yek estefade konande vagheee behine beshe.agar shoma ham gap ya pishnahadi dar moredesh dashtin
+ </p>
+
+   <a href="http://gapper.ir/channel/bestoon1">
+    inja benevisid va khande khahad shod
+  </a>
+</p>
+
+
+   {% if message %}
+   <div class="bs-callout bs-callout-info">
+     <h5>{{message}}</h5>
+   </div>
+    {% end if %}
+
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">sabtenam</h3>
+        </div>
+        <div class="panel-body">
+          <form class="form-horizontal" method="POST" action="/accounts/register/">
+            {%csrf_token%}
+            <input type="hidden" name="requesrcode" value="True" />
+            <input type="hidden" name="next" value="{{ next }}" />
+            <div class="form-group">
+              <label for="username" class="col-sm-2 control-label">name karbari</label>
+              <div class="col-sm-10">
+                <input type="text" name="username" class="form-control" placeholder="min 3 character" required pattern=".{}">
+                </div>
+              </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">email shoma</label>
+              <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" placeholder="sakhte akant be i address ferestade mishavad">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">kalame oboor</label>
+                <div class="col-sm-10">
+                  <input type="password" name="password" class="form-control" placeholder="min 5 character" required pattern="">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">aya shoma robat nistid?</label>
+                <div class="col-sm-10">
+                  <div class="g-recaptcha" data-sitekey="6LeVvA8UAAAAALjoTeoU5_n7NDabQcNdZiq5RaQV"></div>
+                </div>
+              </div>  
+
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default">emaile faal sazi account</button>
+
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
