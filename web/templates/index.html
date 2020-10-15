@@ -1,0 +1,66 @@
+{% extends "template.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">$times;</span></button>
+            <a href "http://jadi.net/tags/بستون">
+               .این برنامه شدیدا در حال توسعه است.اینجا را ببینید
+            
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">بستون۱</h3>
+            </div>
+            <div class="panel-body">
+<p>
+    .بستون۱ یک  بروژه است که قدم به قدم توش سعی میکنیم سیستمی درست کنیم که میشه خرج و دخل رو باهاش نگه داشت.فعلا در اول راهیم و برای استفاده ازش عملا باید یک گیک علاقه مند باشید
+</p>
+<p>
+    برای بازکردن اکانت
+    <a href=/accounts/register/>به صفحه رجیستر شدن برین </a>
+    و برای اطلاعات بیشتر مراجعه کنید به
+    <a href="http://github.com/MMSY376/bestoon1/">
+    گیت هاب بروژه
+    </a>
+</p>
+                </div>
+            </div>
+    <br/></br>
+       </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+<script>
+$(document).eady(function(){
+    $(".subtaskinput").fadeOut(0);
+    $('.fa-square-o').hover(function(){
+        $(this).addClass('fa-check-square-o');
+        $(this).removeClass('fa-square-o');
+    },function(){
+        $(this).addClass('fa-square-o');
+        $(this).removeClass('fa-check-square-o');
+    });
+    });
+</script>
+{% endblock %}
+

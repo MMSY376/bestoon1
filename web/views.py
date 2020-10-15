@@ -94,9 +94,11 @@ def register(request):
               context={'message':'این کد فعال سازی معتبر نیست در صورت نیاز دوباره تلاش کنید'}
               return render(request,'login.html',context)
     else:
-      context={'message':'کد فعال سازی معتبر نیست در صورت نیاز دوباره تلاش کنید'}
+      context={'message':''}
       return render(request,'register.html',context)
-
+def index(request):
+    context={}
+    return render(request,'index.html',context)
 
 @csrf_exempt
 
