@@ -70,7 +70,7 @@ def register(request):
                              subject="فعال سازی اکانت بستون۱",
                              sender="melikamosayebi1376@gmail.com",
                              to=email,
-                             text_body="برای فعال سازی اکانت بستون۱ خود روی لینک رو به رو کلیک کنید:http://localhost:8009/accounts/register/?email={}&code={}".format(email,code),
+                             text_body="برای فعال سازی اکانت بستون۱ خود روی لینک رو به رو کلیک کنید:?email={}&code={}".format(request.build_absolute_uri('accounts/register/'),email,code),
                              tag="account request")
               message.send()
               context={'message':' .ایمیل شما ساخته شد.لطفا بس از چک کردن ایمیل روی لینک کلیک کنید'}
